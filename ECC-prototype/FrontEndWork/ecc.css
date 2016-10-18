@@ -1,21 +1,86 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
 body {
-    background-color: white;
+	line-height: 1;
+    background-color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    margin-left: 3em;
+    margin-left: 1.5em;
 }
 
 nav {
     padding: 1em;
 }
 
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 h1 {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+  
+}
+
+h5 {
+    color: #ffffff;
+    font-size: 1.1em;
 }
 
 li {
+    padding: 1em;
+}
+
+figure {
     padding: 1em;
 }
 
@@ -29,32 +94,79 @@ a {
     color: #e7434e;
 }
 
-.button {
-    background-color: firebrick;
-    color: antiquewhite;
-    font-size: 1em;
-    width: 30%;
-    border-radius: 2em;
+p {
+    padding: 1em;
 }
 
-.column {
-    -webkit-column-count: 2;
+footer {
+    background-color: darkslategrey;
+    padding: 2em;
+    display: inline-flex;
+    width: 100%;
+}
+
+.advsearch {
+    padding: 1.5em;
+    font-size: 1em;
+}
+
+.button {
+    background-color: #e7434e;
+    color: antiquewhite;
+    font-size: 1em;
+    border-radius: 1em;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.banner {
+    text-align: center;
+    color: #464646;
+}
+
+.catcolumn {
+        -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;
     -webkit-column-fill: balance;
        -moz-column-fill: balance;
             column-fill: balance;
+    font-size: 1em;
+    padding-bottom: 1em;
+}
+
+.column {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    -webkit-column-fill: balance;
+       -moz-column-fill: balance;
+            column-fill: balance;
+    margin-top: 1em;
+    
+}
+.flinks {
+    color: gray;
+}
+
+.logo {
+    width: 100%;
 }
 
 .navhover:hover, .stemcat:hover {
-    background-color: firebrick;
-    color: antiquewhite;
+    background-color: #e7434e;
+    color: #fff;
+}
+
+.plinks {
+    padding: 0em;
 }
 
 .plus {
     font-size: 1.5em;
     background-color: darkgray;
-    color: antiquewhite;
+    color: #fff;
     padding: 0em;
 }
 
@@ -64,29 +176,68 @@ a {
     font-size: 1em;    
 }
 
+.select {
+    display: inline-flex;
+    padding: 3em;
+    font-size: 1.2em;
+}
+
 .stemcat {
     padding: 1em;
     border: 1px solid darkgray;
     border-radius: 1em;
     margin-top: 0.5em;
-    background-color: whitesmoke;
+    background-color: #fff;
 }
 
-#logo {
+
+.textfields {
+    display: flex;
+    padding: 0.5em;
+    margin-left: 1em;
+}
+
+#contents {
+    margin-left: 2em;
+}
+#disclaimer {
+    font-style: italic;
+}
+
+
+#emailbutton {
+       background-color: #e7434e;
+    color: #fff;
+    height: 3.5em;
+    border-radius: 0.313em;
+}
+
+
+#emailbutton, #search {
+    background-color: #e7434e;
+    color: #fff;
+    height: 3.5em;
+    border-radius: 0.313em;
+}
+
+#emailbar, #searchbar {
+    margin-left: 1em;
+    margin-top: 1em;
+    height: 3.5em;
+    border-radius: 0.313em;
+    display: inline-block;
+    width: 50%;
+}
+
+@media only screen and (max-width: 31.250em) {
+    footer {
+    display: block;
     width: 100%;
+
+    }
+  nav{
+    display: block;
+    width: 100%;
+  
 }
 
-#search {
-    background-color: firebrick;
-    color: antiquewhite;
-    border-radius: 2em;
-    height: 3.5em;
-    width: 10%;
-}
-
-#searchbar {
-    height: 3.5em;
-    border-radius: 2em;
-    width: 25%;
-    margin: 2em;
-}

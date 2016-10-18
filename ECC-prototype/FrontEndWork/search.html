@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ethics Code Collection</title>
+    <title>Ethics Code Collection- Advanced Search</title>
     <link rel="shortcut icon" href="iiticon.png"/>
     <meta charset="utf-8">
     <!--Mobile specific-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <link rel="stylesheet" type="text/css" href="ecc.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 </head>
 
-<body>
-    <figure>
-        <img src="cseplogo.png" alt="CSEP logo"/>
-    </figure>
-    
-    <h1>Advanced Search</h1>
+<body>	
+    <a class="logo" href="index.html"><img src="ECC-Banner.png" class="logo" alt="ECC logo"/></a>
     <nav>
         <a class="navhover" href="index.html">Home</a>
         <a class="navhover" href="search.html">Advanced Search</a>
@@ -21,6 +19,160 @@
         <a class="navhover" href="resources.html">Resources</a>
         <a class="navhover" href="ethicslinks.html">Ethics &#64; IIT</a>
     </nav>
-    <p>Search has filters like subject area, organization, resource type, profession, etc.</p>
+    <h1>Advanced Search</h1>
+    <div>
+        <input type="search" value= "" id="searchbar" placeholder="Explore Our Digital Collection">
+        <button type="button" id="search">Search</button>
+    </div> 
+    <div class="textfields">
+        <select class="select">
+            <option value="All">All</option>
+<option value="STEM">STEM</option>
+<option value="Art / Hum">Art / Hum</option>
+<option value="Business">Business</option>
+<option value="Government / Law">Government / Law</option>
+<option value="Social">Social</option>
+<option value="General">General</option>
+<option value="Other (Description Required)">Other (Description Required)</option>
+        </select>
+        <textarea name="text">Text Area</textarea>
+    </div>
+    <div class="textfields">
+        <select class="select">
+<option value="All">All</option>
+<option value="Agriculture">Agriculture</option>
+<option value="Animal Breeding and Care">Animal Breeding and Care</option>
+<option value="Architecture">Architecture</option>
+<option value="Business3">Business</option>
+<option value="Construction Trade">Construction Trade</option>
+<option value="Design">Design</option>
+<option value="Eart">Eart</option>
+<option value="Education and Academics">Education and Academics</option>
+<option value="Engineering">Engineering</option>
+<option value="Fraternal and Social Organization">Fraternal and Social Organization</option>
+<option value="Government">Government</option>
+<option value="Life and Enviornmental Science">Life and Enviornmental Science</option>
+<option value="Health Care and Medicin">Health Care and Medicin</option>
+<option value="Military">Military</option>
+<option value="Mental Health">Mental Health</option>
+<option value="Physical Science">Physical Science</option>
+<option value="Real Estate">Real Estate</option>
+<option value="Service Organization">Service Organization</option>
+<option value="Sports and Athletics">Sports and Athletics</option>
+<option value="Social Science">Social Science</option>
+<option value="Travel and Transportation">Travel and Transportation</option>
+<option value="Wildlife and Enviornmental Stewardship">Wildlife and Enviornmental Stewardship</option>
+<option value="Other (Description Required)">Other (Description Required)</option>
+        </select>
+        <textarea name="text">Text Area</textarea>
+    </div>
+    <div class="advsearch">
+        <button type="submit" class="button">SEARCH</button>
+        <button type="button" class="button">ADD FIELDS</button>
+    </div>
+    
+    <h2>Additional Search Criteria</h2>
+    
+    <div class="advsearch">
+        <select class="select" name="Article Option">
+            <option selected>Article Option</option>
+            <option>Search by Media</option>
+            <option>Search by Text</option>
+          
+        </select>
+
+        <select class="select" name="years">
+            <option selected>Years</option>
+            <option>1885-1900</option>
+            <option>1901-1915</option>
+            <option>1916-1930</option>
+			<option>1931-1945</option>
+			<option>1946-1960</option>
+			<option>1961-1975</option>
+			<option>1976-1990</option>
+			<option>1991-2005</option>
+			<option>2006-2020</option>
+        </select>
+        
+        <select class="select" name="Search by language">
+            <option selected>Language</option>
+            <option>English</option>
+			<option>Spanish</option>
+			<option>German</option>
+			<option>French</option>
+			<option>Chinese</option>
+        </select>
+    </div>
+    
+    <h2>Categories</h2>
+    
+    <div class="advsearch">
+        <div class="catcolumn">    
+            <input type="checkbox" name="STEM" value="STEM"> STEM<br>
+  <input type="checkbox" name="Art / Hum" value="Art / Hum"> Art / Hum<br>
+  <input type="checkbox" name="Business" value="Business"> Business<br>
+  <input type="checkbox" name="Government / Law" value="Government / Law"> Government / Law<br>
+  <input type="checkbox" name="Social" value="Social"> Social<br>
+  <input type="checkbox" name="General" value="General"> General<br>
+  <input type="checkbox" name="All" value="All"> All<br>
+        </div>
+    </div>
+        
+    <h2>Format</h2>
+        
+    <div class="advsearch">
+        <div class="catcolumn">
+            <input type="checkbox" name="Print Guide" value="Print Guide"> Print Guide<br>
+            <input type="checkbox" name="Full Text" value="Full Text"> Full Text<br>
+            <input type="checkbox" name="All" value="All"> All<br>
+        </div>
+        <button type="submit" class="button">SUBMIT</button>
+    </div>
+    
+<!-- Footer -->
+<footer class="column">
+        <h5>RESOURCES</h5>
+            <ul>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/node/5621">Print Guide</a></li>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/node/5421">Collection Policy</a></li>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/bibliography">Bibliography</a></li>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/introduction">Why Codes?</a></li>
+            </ul>
+      
+        <h5>ETHICS @ IIT</h5>
+            <ul>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/about">About</a></li>
+                <li><a class="flinks" href="http://ethics.iit.edu/ecodes/authoring-code">Authoring a Code</a></li>
+                <li><a class="flinks" href="http://ethics.iit.edu/">CSEP</a></li>
+                <li><a class="flinks" href="http://ethicscodescollection.blogspot.com/">News and Updates</a></li>
+            </ul>
+    <div>
+        <h5>SUBSCRIBE TO THE CSEP</h5>  
+            <form>
+                <input type="text" id="emailbar" value="" placeholder="Email Address">
+                <button type="submit" id="emailbutton">SUBSCRIBE</button>
+            </form>
+    </div>
+            <ul>
+                <li><a class="flinks" href="https://www.facebook.com/CSEPIllinoisTech/"><i class="icon-facebook"></i></a></li>
+                <li><a class="flinks" href="https://twitter.com/csep1"><i class="icon-twitter"></i></a></li>
+                <li><a class="flinks" href="http://cseplibrary.blogspot.com/"><i class="icon-blogpost"></i></a></li>
+                <li><a class="flinks" href="http://feeds2.feedburner.com/CsepLibrary"><i class="icon-feedburner"></i></a></li>
+            </ul>
+    
+    <!--<div id="footer-wrapper">
+            <h5>Center for the Study of Ethics in the Professions</h5>
+                <p>
+                Hermann Hall
+                <br> 
+                3241 S Federal Street, Room 204 
+                <br> 
+                Chicago, IL 60616
+                </p>
+                <p>
+                Tel 312.567.3017 | <a href="mailto:csep@iit.edu"> csep@iit.edu</a>
+                </p>
+    </div>  -->
+</footer>
 </body>
 </html>
