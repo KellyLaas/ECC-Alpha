@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/codes/:id' => 'plugins/ecc/front/codes#show'
   get '/organizations' => 'plugins/ecc/front/orgs#index'
   get '/organizations/:id' => 'plugins/ecc/front/orgs#show'
+  get '/search' => 'plugins/ecc/front/search#show'
   get '/:description' => 'plugins/ecc/front/staticpages#show' 
     scope PluginRoutes.system_info["relative_url_root"] do
       scope '(:locale)', locale: /#{PluginRoutes.all_locales}/, :defaults => {  } do

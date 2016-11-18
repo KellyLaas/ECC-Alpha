@@ -7,7 +7,7 @@ class Plugins::Ecc::Front::OrgsController < Plugins::Ecc::FrontController
 
   def show
     @org = Orgs.find(params[:id])
-    @codes = Staticpages.where("pagetype_id = ?", @org.id)
+    @codes = Codes.where("org_id = ?", @org.id)
     render 'ecc/orgs/show'
   end
   private

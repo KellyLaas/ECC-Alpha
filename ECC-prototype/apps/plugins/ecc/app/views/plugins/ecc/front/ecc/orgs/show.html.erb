@@ -9,10 +9,22 @@
     <div class="panel-body">
       <p> <%= raw(@org.desc) %> </p>
       <div class="code-body">
-        <% if @codes.empty %>
+        <% if @codes.empty? %>
           <h3> Organization has yet to add codes! </h3>
         <% else %>
-          <% for each @codes do |code| %>
+  
+          <table class="table table-responsive table-hover table-striped" id="posts-table-list">
+            <thead>
+              <th> Code </th>
+              <th> Year </th>
+            </thead>
+            <tbody>
+              <% @codes.each do |code| %>
+                <td> <%= link_to code.code_title, {controller: :codes, action: :show, id: code.id} %></td>
+                <td> <%= code.code_year %> </td>
+              <% end %>
+            </tbody>
+          </table>
         <% end %>
       </div>
     </div>
