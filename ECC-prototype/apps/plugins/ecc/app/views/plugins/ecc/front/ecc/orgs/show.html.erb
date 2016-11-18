@@ -7,6 +7,13 @@
       </div>
     </div>
     <div class="panel-body">
-      <p> <%= @org.desc %> </p>
+      <p> <%= raw(@org.desc) %> </p>
+      <div class="code-body">
+        <% if @codes.empty %>
+          <h3> Organization has yet to add codes! </h3>
+        <% else %>
+          <% for each @codes do |code| %>
+        <% end %>
+      </div>
     </div>
 </div>

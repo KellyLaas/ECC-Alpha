@@ -1,5 +1,5 @@
 class Plugins::Ecc::Admin::CodesController < Plugins::Ecc::AdminController
-  before_action :set_code, only: ['show','edit','update','destroy']
+  before_action :set_code, :set_org, only: ['show','edit','update','destroy']
   include Plugins::Ecc
 
   def index
