@@ -6,7 +6,7 @@
       <%= f.label "Content:" %><em class="text-danger">*</em>
         <%= f.text_field :code_content %><em class="text-danger">*</em>
       <%= f.label "Code Year" %>
-      <%= f.date_select :code_year, :start_year => (Time.now.year - 100)%>
+      <%= f.date_select :code_year, :start_year => (Time.now.year - 100), discard_day: true, discard_month: true %>
       <%= f.label "Organization" %>
         <%= f.select(:org_id) do %>
           <%= @orgs.each do |c| -%>

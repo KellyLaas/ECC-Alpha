@@ -4,7 +4,7 @@
             </div>
             <div class="panel-body">
               <%= @org.desc %>
-              <%=button_to "Edit Code", edit_admin_plugins_ecc_ecc_org_path, method: :get, class: 'pull-right' %>
-              <%=button_to "Delete",  admin_plugins_ecc_ecc_org_path(@org), method: :delete, data: { confirm: 'Are you sure?' },  class: 'pull-right' %>
+              <%=button_to "Edit Code", edit_admin_plugins_ecc_org_path, method: :get, class: 'pull-right' %>
+              <%=button_to "Delete",  admin_plugins_ecc_org_path(@org), method: :delete, data: { confirm: 'Are you sure?' },  class: 'pull-right' %>
             </div>
         </div>

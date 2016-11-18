@@ -1,11 +1,11 @@
 <div class="content-frame">
-  <%= form_for @org, as: "org", url: admin_plugins_ecc_ecc_org_path(@org), method: :patch, html: {class: "edit_ob"} do |f| %> 
+  <%= form_for @org, as: "org", url: admin_plugins_ecc_org_path(@org), method: :patch, html: {class: "edit_ob"} do |f| %> 
       <%= f.label "Organization Name:" %><em class="text-danger">*</em>
       <%= f.text_field :name %>
       <%= f.label "Short Description:" %><em class="text-danger">*</em>
       <%= f.text_field :desc %>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Update" %>
   <% end %>
 
 </div>

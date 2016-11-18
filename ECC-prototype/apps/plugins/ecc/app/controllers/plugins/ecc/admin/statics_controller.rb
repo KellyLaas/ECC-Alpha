@@ -1,6 +1,7 @@
 class Plugins::Ecc::Admin::StaticsController < Plugins::Ecc::AdminController
   before_action :set_page, only: ['show','edit','update','destroy']
   before_action :set_pagetype
+  before_action :del_page, only: ['destroy']
   include Plugins::Ecc
   
   def index
@@ -20,10 +21,9 @@ class Plugins::Ecc::Admin::StaticsController < Plugins::Ecc::AdminController
   def edit
     render 'statics_edit'
   end
-  def destroy
-    @page = Staticpages.where(pagetype_id: params[:id]).take
-    @page.destroy
-    ActiveRecord::Base.connection.execute("DELETE FROM plugins_ecc_pagetypes WHERE id = " + params[:id]);
+  def destroy 
+    @p.destroy
+    ActiveRecord::Base.connection.execute("DELETE FROM plugins_ecc_pagetypes WHERE id = #{ @pt}");
     redirect_to action: 'index'
   end    
   def create
@@ -40,8 +40,9 @@ class Plugins::Ecc::Admin::StaticsController < Plugins::Ecc::AdminController
   end
   def update
     up_page = params.require(:page).permit(:title, :content, :pagetype)
+    @page=Staticpages.find(params[:id])
     if @page.update(up_page)
-      redirect_to action: :show
+      redirect_to action: :index
     else 
       render 'edit'
     end
@@ -51,6 +52,10 @@ class Plugins::Ecc::Admin::StaticsController < Plugins::Ecc::AdminController
   private
   def set_pagetype
     @pagetype = Staticpages.find_by_sql("Select * from plugins_ecc_pagetypes")
+  end
+  def del_page
+    @p = Staticpages.find(params[:id])
+    @pt = @p.pagetype_id
   end
   def set_page
     @page = Staticpages.where('pagetype_id' => params[:id]).first

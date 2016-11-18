@@ -1,13 +1,14 @@
-class Plugins::Ecc::Front::CodesController < Plugins::Ecc::FrontController
+class Plugins::Ecc::Front::OrgsController < Plugins::Ecc::FrontController
   include Plugins::Ecc
   def index
-    @orgs = Codes.paginate(:page => params[:page], :per_page =>current_site.admin_per_page).order('name DESC')
+    @orgs = Orgs.paginate(:page => params[:page], :per_page =>current_site.admin_per_page).order('name DESC')
     render 'ecc/orgs/index'
   end
+
   def show
     @org = Orgs.find(params[:id])
-    @codes Staticpages.where("pagetype_id = ?", @org.id])
-    render 'ecc/codes/show'
+    @codes = Codes.where("org_id = ?", @org.id)
+    render 'ecc/orgs/show'
   end
   private
   def ecc_params

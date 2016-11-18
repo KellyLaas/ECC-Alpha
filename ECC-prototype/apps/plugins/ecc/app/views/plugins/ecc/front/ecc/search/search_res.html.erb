@@ -1,0 +1,29 @@
+<%#= javascript_include_tag plugin_gem_asset("js/my_file.js") %>
+
+<h2> Welcome to the Ethics Codes Collection Site!</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+</div> 
+<div class="panel-body">
+  <% if @results.empty? %>
+    <h4> No Results :(</h4>
+  <% else %>  
+    <table>
+      <thead>
+        <th> Displaying <%= @results.length %> Results </th>
+      </thead>
+      <tbody>
+        <% @results.each do |key, val| %>
+            <% val.each do |row| %>
+            <tr> <td><%= link_to row['title'], {controller: key, action: :show, id: row['id']} %></td></tr>
+            <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  </div>
+</div>             
