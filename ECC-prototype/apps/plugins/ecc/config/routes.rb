@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'plugins/ecc/front/staticpages#index'
   get '/codes' => 'plugins/ecc/front/codes#index'
   get '/codes/:id' => 'plugins/ecc/front/codes#show'
+  get '/organizations' => 'plugins/ecc/front/orgs#index'
+  get '/organizations/:id' => 'plugins/ecc/front/orgs#show'
   get '/:description' => 'plugins/ecc/front/staticpages#show' 
     scope PluginRoutes.system_info["relative_url_root"] do
       scope '(:locale)', locale: /#{PluginRoutes.all_locales}/, :defaults => {  } do
@@ -12,11 +14,9 @@ Rails.application.routes.draw do
         namespace :plugins do
           namespace 'ecc' do
             get 'index' => 'front#index'
-            resources :eccs do 
               resources :staticpages
               resources :orgs
               resources :codes
-            end
           end
         end
       end
@@ -27,11 +27,9 @@ Rails.application.routes.draw do
           namespace 'ecc' do
             get 'index' => 'admin#index'
             get 'settings' => 'admin/settings#index'
-            resources :eccs, controller: "admin/eccs" do
               resources :orgs, controller: "admin/orgs"
               resources :codes, controller: "admin/codes"
               resources :staticpages, controller: "admin/statics"
-              end
           end
         end
       end
