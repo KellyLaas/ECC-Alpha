@@ -9,7 +9,7 @@
     </div>
     <div class="panel-body">
       <%= @code.code_content %>
-      <%=button_to "Edit Code", edit_admin_plugins_ecc_ecc_code_path, method: :get, class: 'pull-right' %>
-      <%=button_to "Delete",  admin_plugins_ecc_ecc_code_path(@code), method: :delete, data: { confirm: 'Are you sure?' },  class: 'pull-right' %>
+      <%=button_to "Edit Code", edit_admin_plugins_ecc_code_path, method: :get, class: 'pull-right' %>
+      <%=button_to "Delete",  admin_plugins_ecc_code_path(@code), method: :delete, data: { confirm: 'Are you sure?' },  class: 'pull-right' %>
     </div>
 </div>

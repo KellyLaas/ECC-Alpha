@@ -1,5 +1,5 @@
 <div class="content-frame">
-    <%= form_for @page, as: "page", url: admin_plugins_ecc_ecc_staticpage_path(@page), method: :patch, html: {class: "edit_ob"} do |f| %>
+    <%= form_for @page, as: "page", url: admin_plugins_ecc_staticpage_path(@page), method: :patch, html: {class: "edit_ob"} do |f| %>
       <%= f.label "Page Title" %><em class="text-danger">*</em>
       <%= f.text_field :title %>
       <%= f.label "Content:" %><em class="text-danger">*</em>

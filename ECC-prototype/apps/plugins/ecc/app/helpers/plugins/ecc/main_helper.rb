@@ -22,26 +22,18 @@ module Plugins::Ecc::MainHelper
   end
 
   def ecc_admin_before_load
-     pt = current_site.post_types.hidden_menu.where(slug: "ecc").first
-    if pt.present?
+      pt = current_site.post_types.hidden_menu.where(slug: "ecc").first
       items_i = []
-      items_i << {icon: "list", title: t('plugin.ecc.all_eccs'), url: admin_plugins_ecc_eccs_path} 
-     items_i << {icon: "list", title: t('plugin.ecc.all_orgs'), url: admin_plugins_ecc_ecc_orgs_path(pt.id)} 
-       items_i << {icon: "list", title: t('plugin.ecc.all_codes'), url: admin_plugins_ecc_ecc_codes_path(pt.id)} 
-     if pt.manage_categories?
-        items_i << {icon: "folder-open", title: t('camaleon_cms.admin.post_type.categories'), url: cama_admin_post_type_categories_path(pt.id)} if can? :categories, pt
-      end
-      if pt.manage_tags?
-        items_i << {icon: "tags", title: t('camaleon_cms.admin.post_type.tags'), url: cama_admin_post_type_post_tags_path(pt.id)} if can? :post_tags, pt
-      end
-
+      items_i << {icon: "list", title: "Pages", url: admin_plugins_ecc_staticpages_path} 
+     
+      items_i << {icon: "list", title: t('plugin.ecc.all_orgs'), url: admin_plugins_ecc_orgs_path}
+      items_i << {icon: "list", title: t('plugin.ecc.all_codes'), url: admin_plugins_ecc_codes_path} 
       items_i << {icon: "cogs", title: t('camaleon_cms.admin.button.settings'), url: admin_plugins_ecc_settings_path}
 
       admin_menu_insert_menu_after("content", "ecc", {icon: "camera", title: t('plugin.ecc.ecc'), url: "", items: items_i}) if items_i.present?
-    end
 
     # add assets admin
-    append_asset_libraries({ecc: {css: [plugin_gem_asset('admin')], js: [plugin_gem_asset('admin')]}})
+#    append_asset_libraries({ecc: {css: [plugin_gem_asset('admin')], js: [plugin_gem_asset('admin')]}})
 
   end
 
